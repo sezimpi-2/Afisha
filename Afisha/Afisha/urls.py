@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import (
+from movie_app.views import (
     director_list_api_view,
     director_detail_api_view,
     movie_list_api_view,

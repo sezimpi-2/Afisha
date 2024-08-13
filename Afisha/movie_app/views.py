@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Director, Movie, Review
-from .serializers import DirectorSerializer, MovieSerializer, ReviewSerializer
+from .serializer import DirectorSerializer, MovieSerializer, ReviewSerializer
 
 
 @api_view(['GET'])
