@@ -1,10 +1,10 @@
 from django.db import models
 
-
-
 class Director(models.Model):
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
 
 class Movie(models.Model):
     title = models.CharField(max_length=100)
@@ -19,9 +19,9 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 
-
 class Review(models.Model):
     text = models.CharField(max_length=50)
+    stars = models.IntegerField(default=1)  # Поле для хранения рейтинга от 1 до 5
     movie = models.ForeignKey(
         Movie,
         on_delete=models.CASCADE,
@@ -29,4 +29,4 @@ class Review(models.Model):
     )
 
     def __str__(self):
-        return self.text
+        return f"{self.text} ({self.stars} stars)"
