@@ -13,7 +13,7 @@ class Movie(models.Model):
     director = models.ForeignKey(
         Director,
         on_delete=models.CASCADE,
-        related_name='director'
+        related_name='movies'
     )
 
     def __str__(self):
@@ -21,7 +21,7 @@ class Movie(models.Model):
 
 class Review(models.Model):
     text = models.CharField(max_length=50)
-    stars = models.IntegerField(default=1)  # Поле для хранения рейтинга от 1 до 5
+    stars = models.IntegerField(default=1)
     movie = models.ForeignKey(
         Movie,
         on_delete=models.CASCADE,
@@ -30,3 +30,4 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.text} ({self.stars} stars)"
+

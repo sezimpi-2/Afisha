@@ -28,4 +28,4 @@ class DirectorSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_movies_count(self, obj):
-        return obj.director.count()
+        return obj.movies.count()
