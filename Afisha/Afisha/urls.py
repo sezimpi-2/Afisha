@@ -10,6 +10,7 @@ from movie_app.views import (
 )
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     # для работы с режиссерами
     path('api/v1/directors/', director_list_api_view, name='director-list'),
     path('api/v1/directors/<int:id>/', director_detail_api_view, name='director-detail'),
